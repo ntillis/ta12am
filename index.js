@@ -1,14 +1,23 @@
-const http = require('http');
+const express = require('express');
+const expressLayout = require('express-ejs-layouts');
 
-const hostname = '0.0.0.0'; // Listen on all interfaces
-const port = 3000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-server.listen(port, hostname, () => {
+app.use(express.static('public'));
+
+app.use(expressLayout);
+app.set('layout', './layouts/main');
+app.set('view engine', 'ejs');
+
+app.use('/', require('./server/routes/main'));
+
+
+const hostname = '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });

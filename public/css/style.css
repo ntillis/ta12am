@@ -52,7 +52,7 @@ textarea {
     margin-bottom: 1rem;
 }
 
-/*
+
 .btn {
     background-color: var(--black);
     border: none;
@@ -62,7 +62,7 @@ textarea {
     margin: 4px 2px;
     cursor: pointer;
 }
-*/
+
 
 .btn-delete {
     padding: 10px 16px;
@@ -325,7 +325,7 @@ img {
 .admin_post_controls .btn  {
   display: inline-block;
   background-color: var(--black);
-  color: var(--gray-light);
+  color: var(--grey-light);
   border: 0;
   text-decoration: none;
   font-size: .8rem;

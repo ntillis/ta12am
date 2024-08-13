@@ -1,11 +1,75 @@
-<header>
-    <h1>Welcome to my blog</h1>
-    <p>Your go-to solution for amazing experiences.</p>
-</header>
-<section class="content">
-    <h2>About Us</h2>
-    <p>We provide top-notch solutions to make your life easier.</p>
+<div class="author">
+    <h1 class="author_heading">Thinking at 12am</h1>
+    <p class="author_body">A Random Thought Blog</p>
+</div>
+
+<img src="/img/family.jpg" alt="my family" class="hero-image" width="981" height="528">
+
+<div class="container-fluid black-section text-center py-4">
+    <h2>Contact Me: </h2>
+    <a href="https://www.facebook.com/melissa.tillis">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+        <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+    </svg></a>
+</div>
+
+<div class="author">
+    <h1 class="author_heading">Hi, I'm Melissa</h1>
+    <p class="author_body">Dog mom, regular mom and now blogger. I created this blog as a hobby and a place to put my thoughts. I hope you enjoy it!</p>
+</div>
+
+<section class="tags mb-4">
+    <h2 class="articles_heading">Blogs By Tag</h2>
+
+    <ul class="article_ul">
+
+        <% tags.forEach(tag => { %>
+        <li>
+            <a href="/search/tags/<%= tag.name %>">
+                <span><%= tag.name %></span>
+            </a>
+        </li>
+        <% }) %>
+
+    </ul>
+    <a href="/search/all-tags" class="pagination">&lt; View all tags</a>
 </section>
-<footer>
-    <p>&copy; 2024 My Landing Page</p>
-</footer>
+
+<section class="articles">
+    <h2 class="articles_heading">Recent Posts</h2>
+
+    <ul class="article_ul">
+
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+
+    </ul>
+
+    <a href="search/all-blogs" class="pagination">&lt; View All Posts</a>
+</section>
+
+<div class="container subscription">
+    <div class="card m-5 mx-auto" style="width:60%; border:2px solid #52663b">
+        <div class="card-body">
+            <h3 class="card-title text-center m-4">Wanna get notified about new posts?</h3>
+            <p class="card-text text-center m-4">Sign up for the mailing list!</p>
+            <form action="/subscribe" method="post">
+                <div class="form-group form-floating m-2">
+                    <input type="text" name="fName" class="form-control" required>
+                    <label for="fName">First Name:</label>
+                </div>
+                <div class="form-group form-floating m-2">
+                    <input type="email" name="email" class="form-control" required>
+                    <label for="email">Email:</label>
+                </div>
+                <button class="btn d-block mx-auto mt-4 mb-4 newsletter-btn" style="background-color:#31312f; color:#ffffff; border-radius:0;" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

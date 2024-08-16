@@ -1,21 +1,68 @@
-<div class="author">
-    <h1 class="author_heading">Thinking at 12am</h1>
-    <p class="author_body">A Random Thought Blog</p>
+
+<nav class="navbar">
+    <img src="img/horizontal-logo.svg" alt="Logo" class="navbar__logo">
+    <ul class="navbar__links">
+        <li><a href="#home">Latest</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="#">
+                Search
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zM12.5 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="landing_page">
+
+    <div class="wave-container">
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,100 C 109.95215311004787,104.34449760765551 219.90430622009575,108.68899521531101 311,100 C 402.09569377990425,91.31100478468899 474.334928229665,69.58851674641147 561,73 C 647.665071770335,76.41148325358853 748.7559808612441,104.95693779904306 862,122 C 975.2440191387559,139.04306220095694 1100.641148325359,144.58373205741626 1199,139 C 1297.358851674641,133.41626794258374 1368.6794258373207,116.70813397129187 1440,100 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#a875b1" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path><path d="M 0,400 L 0,233 C 100.26794258373207,252.37799043062202 200.53588516746413,271.75598086124404 278,276 C 355.46411483253587,280.24401913875596 410.12440191387554,269.3540669856459 522,252 C 633.8755980861245,234.64593301435409 802.9665071770336,210.82775119617222 911,203 C 1019.0334928229664,195.17224880382778 1066.0095693779906,203.33492822966508 1144,211 C 1221.9904306220094,218.66507177033492 1330.9952153110048,225.83253588516746 1440,233 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#a875b1" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path></svg>
+
+    </div>
+
+    <img src="/img/family.jpg" alt="my family">
 </div>
 
-<img src="/img/family.jpg" alt="my family" class="hero-image" width="981" height="528">
+<!--
+<% var
+images=['https://assets.codepen.io/108082/jake-and-fin-1.jpg', 'https://assets.codepen.io/108082/jake-and-fin-2.jpg'
+, 'https://assets.codepen.io/108082/jake-and-fin-3.jpg' ]; %>
 
-<div class="container-fluid black-section text-center py-4">
+<div class="carousel-container">
+    <aside class="carousel">
+        <div class="carousel__wrapper">
+            <% images.forEach(function(item, i) { %>
+                <div class="item" id="slide-<%= i %>">
+                    <img src="<%= item %>" alt="" width="auto" height="418">
+                </div>
+                <% }) %>
+        </div>
+    </aside>
+</div>
+
+!-->
+
+<br></br>
+
+<div class="container-fluid text-center py-4">
     <h2>Contact Me: </h2>
     <a href="https://www.facebook.com/melissa.tillis">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-        <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
-    </svg></a>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+            <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+            <path fill="#fff"
+                d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z">
+            </path>
+        </svg></a>
 </div>
 
 <div class="author">
     <h1 class="author_heading">Hi, I'm Melissa</h1>
-    <p class="author_body">Dog mom, regular mom and now blogger. I created this blog as a hobby and a place to put my thoughts. I hope you enjoy it!</p>
+    <p class="author_body">Dog mom, regular mom and now blogger. I created this blog as a hobby and a place to put my
+        thoughts. I hope you enjoy it!</p>
 </div>
 
 <section class="tags mb-4">
@@ -23,13 +70,15 @@
 
     <ul class="article_ul">
 
-        <% tags.forEach(tag => { %>
-        <li>
-            <a href="/search/tags/<%= tag.name %>">
-                <span><%= tag.name %></span>
-            </a>
-        </li>
-        <% }) %>
+        <% tags.forEach(tag=> { %>
+            <li>
+                <a href="/search/tags/<%= tag.name %>">
+                    <span>
+                        <%= tag.name %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
 
     </ul>
     <a href="/search/all-tags" class="pagination">&lt; View all tags</a>
@@ -40,14 +89,18 @@
 
     <ul class="article_ul">
 
-        <% data.forEach(post => { %>
-        <li>
-            <a href="/post/<%= post._id %>">
-                <span><%= post.title %></span>
-                <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
-            </a>
-        </li>
-        <% }) %>
+        <% data.forEach(post=> { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="article-list_date">
+                        <%= post.createdAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
 
     </ul>
 
@@ -68,7 +121,8 @@
                     <input type="email" name="email" class="form-control" required>
                     <label for="email">Email:</label>
                 </div>
-                <button class="btn d-block mx-auto mt-4 mb-4 newsletter-btn" style="background-color:#31312f; color:#ffffff; border-radius:0;" type="submit">Sign Up</button>
+                <button class="btn d-block mx-auto mt-4 mb-4 newsletter-btn"
+                    style="background-color:#31312f; color:#ffffff; border-radius:0;" type="submit">Sign Up</button>
             </form>
         </div>
     </div>

@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --black: #1c1c1c;
+  --grey: #7e7e7e;
+  --grey-light: #e4e4e4;
+  --red: #b30000;
+  --purple: rgb(168,117,177);
+  --font-size-base: 1rem;
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --border-radius: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  font-size: var(--font-size-base);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+h3 {
+  font-size: var(--font-size-md);
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: #f0e6f6;
+  font-size: calc(var(--font-size-md) * 1.05);
+}
+
+.nav-bar a {
+  color: white;
+  font-size: var(--font-size-md);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.landing_page {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-image: linear-gradient(rgb(168, 117, 177), rgba(168, 117, 177, 0));
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container {
+  max-width: 982px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 600px;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
+  filter: none;
+  border-radius: 0;
+}
+
+.wave-container {
+  position: relative;
+  width: 100%;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.btn {
+  background-color: var(--black);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 10px 16px;
+  background-color: var(--red);
+}
+
+.landing_page img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Ensure the image scales properly */
+  width: 50%;
+  height: auto;
+}
+
+/* Article list */
+.article_heading {
+  margin-top: 4rem;
+  font-weight: 400;
+}
+
+.article_ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(1.13rem, 1.08rem + 0.22vw, 1.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list_date {
+  font-size: var(--font-size-base);
+  color: var(--grey);
+  width: 260px;
+  display: inline-block;
+}
+
+.article_ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 18px 0;
+  color: var(--black);
+}
+
+@media only screen and (min-width: 768px) {
+  .article_ul li a {
+    flex-direction: row;
+    align-items: center;
+  }
+  .article-list_date {
+    text-align: right;
+  }
+}
+.article_ul lii {
+  font-size: 24px;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+
+.article_ul li:not(:last-child) {
+  border-bottom: 1px solid var(--grey-light);
+}
+
+.article_ul li:hover {
+  filter: none;
+}
+
+.article_ul:hover li:hover {
+  filter: none;
+}
+
+.pagination {
+  font-size: 1.3rem;
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.pagination:hover {
+  color: var(--black);
+}
+
+.article {
+  white-space: pre-wrap;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 10px;
+  grid-template-areas: "logo button" "menu menu";
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "logo menu button";
+  }
+}
+.header_logo {
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.header_button {
+  display: flex;
+  justify-content: end;
+}
+
+.header_nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.header_nav ul a {
+  padding: 10px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.footer {
+  margin: 4rem;
+  text-align: center;
+}
+
+@keyframes carousel-animate {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(200%) scale(0.7);
+  }
+  3%, 33.3333333333% {
+    visibility: visible;
+    opacity: 0.8;
+    transform: translateX(100%) scale(0.9);
+  }
+  36.3333333333%, 66.6666666667% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  69.6666666667%, 100% {
+    visibility: visible;
+    opacity: 0.8;
+    transform: translateX(-100%) scale(0.9);
+  }
+  103% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateX(-200%) scale(0.9);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-200%) scale(0.7);
+  }
+}
+.carousel-container {
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  --container-padding-horizontal: 32px;
+  position: relative;
+  padding-inline: var(--container-padding-horizontal);
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+
+.carousel {
+  pointer-events: none;
+  position: absolute;
+  padding-block-start: 67px;
+  padding-block-end: max(24px, 29px + var(--font-size-md));
+  perspective: 100px;
+  width: 100%;
+}
+.carousel__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 61.2vh;
+}
+.carousel .item {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-inline: 32px;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: carousel-animate 9s ease-in-out infinite;
+}
+@media (max-width: 568px) {
+  .carousel .item {
+    margin-inline: calc(var(--container-padding-horizontal) + 1px);
+  }
+}
+.carousel .item:nth-child(1) {
+  animation-delay: calc(3s * -1);
+}
+.carousel .item:nth-child(2) {
+  animation-delay: calc(3s * 0);
+}
+.carousel .item:last-child {
+  animation-delay: calc(-3s * 2);
+}
+.carousel img {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Align items vertically in the center */
+  padding: 20px; /* Add padding around the navbar */
+  background-color: #a875b1; /* Example background color */
+  margin-left: calc(-50vw + 50%);
+  width: 100vw;
+}
+
+.navbar__logo {
+  width: 40%; /* Adjust the logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar__links {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Align links horizontally */
+  gap: 20px; /* Space between the links */
+  margin: 0; /* Remove default margin */
+  padding-right: 10%; /* Remove default padding */
+}
+
+.navbar__links li a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Text color */
+  font-weight: 600; /* Bold text */
+  font-size: var(--font-size-md); /* Adjust font size */
+  padding: 10px 15px; /* Add padding to the links */
+}
+
+.navbar__links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+  border-radius: 5px; /* Add rounded corners */
+}

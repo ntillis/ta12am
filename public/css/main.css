@@ -53,13 +53,26 @@ a {
 .landing_page {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  background-image: linear-gradient(rgb(168, 117, 177), rgba(168, 117, 177, 0));
   padding-left: 0;
   padding-right: 0;
 }
 
+.gradient {
+  background-image: linear-gradient(rgb(168, 117, 177), rgba(168, 117, 177, 0));
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousel {
+  max-width: 70%; /* or any desired width */
+  margin: 0 auto; /* Center the carousel */
+  padding: 0 15px; /* Optional: add some padding */
+  position: relative;
+}
+
 .container {
-  max-width: 982px;
   margin: 0;
   padding: 0;
 }
@@ -107,6 +120,41 @@ a {
   max-width: 100%; /* Ensure the image scales properly */
   width: 50%;
   height: auto;
+}
+
+/* Author */
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  background-color: #DCDCDC; /* Gainsboro */
+}
+.author .bio_pic {
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+.author .author_text {
+  flex: 1;
+  padding: 20px;
+}
+.author .author_text h1 {
+  margin: 0;
+  font-size: 48px;
+}
+.author .author_text p {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.author .author_text a {
+  color: #52663b;
+  text-decoration: none;
 }
 
 /* Article list */
@@ -225,92 +273,6 @@ a {
 .footer {
   margin: 4rem;
   text-align: center;
-}
-
-@keyframes carousel-animate {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(200%) scale(0.7);
-  }
-  3%, 33.3333333333% {
-    visibility: visible;
-    opacity: 0.8;
-    transform: translateX(100%) scale(0.9);
-  }
-  36.3333333333%, 66.6666666667% {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-  69.6666666667%, 100% {
-    visibility: visible;
-    opacity: 0.8;
-    transform: translateX(-100%) scale(0.9);
-  }
-  103% {
-    visibility: visible;
-    opacity: 0;
-    transform: translateX(-200%) scale(0.9);
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(-200%) scale(0.7);
-  }
-}
-.carousel-container {
-  margin-left: calc(-50vw + 50%);
-  padding: 0;
-  --container-padding-horizontal: 32px;
-  position: relative;
-  padding-inline: var(--container-padding-horizontal);
-  display: grid;
-  place-items: center;
-  width: 50%;
-}
-
-.carousel {
-  pointer-events: none;
-  position: absolute;
-  padding-block-start: 67px;
-  padding-block-end: max(24px, 29px + var(--font-size-md));
-  perspective: 100px;
-  width: 100%;
-}
-.carousel__wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  height: 61.2vh;
-}
-.carousel .item {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  margin-inline: 32px;
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: carousel-animate 9s ease-in-out infinite;
-}
-@media (max-width: 568px) {
-  .carousel .item {
-    margin-inline: calc(var(--container-padding-horizontal) + 1px);
-  }
-}
-.carousel .item:nth-child(1) {
-  animation-delay: calc(3s * -1);
-}
-.carousel .item:nth-child(2) {
-  animation-delay: calc(3s * 0);
-}
-.carousel .item:last-child {
-  animation-delay: calc(-3s * 2);
-}
-.carousel img {
-  max-width: 100%;
-  object-fit: cover;
-  height: 100%;
 }
 
 .navbar {

@@ -1,13 +1,26 @@
 .landing_page {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    background-image: linear-gradient(rgba(168,117,177,1), rgba(168,117,177,0));
     padding-left: 0;
     padding-right: 0;
 }
 
+.gradient {
+    background-image: linear-gradient(rgba(168,117,177,1), rgba(168,117,177,0));
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left:0;
+    padding-right: 0;
+}
+
+.carousel {
+    max-width: 70%; /* or any desired width */
+    margin: 0 auto; /* Center the carousel */
+    padding: 0 15px; /* Optional: add some padding */
+    position: relative;
+}
+
 .container {
-    max-width: 982px;
     margin: 0;
     padding: 0;
 }
@@ -57,6 +70,50 @@
     width: 50%;
     height: auto;
   }
+
+/* Author */
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+
+    background-color: #DCDCDC; /* Gainsboro */
+
+
+    .bio_pic {
+        max-width: 50%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .author_text {
+        flex: 1;
+        padding: 20px;
+        h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        a {
+            color:#52663b;
+            text-decoration: none;
+        }
+    }
+}
 
 /* Article list */
 .article_heading {

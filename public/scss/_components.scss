@@ -73,6 +73,11 @@
 
 /* Author */
 
+.author-container {
+    max-width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container */
+}
+
 .author {
     display: flex;
     align-items: center;
@@ -80,12 +85,10 @@
 
     
     width: 100%;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     border-radius: 0;
     box-sizing: border-box;
-
-    background-color: #DCDCDC; /* Gainsboro */
 
 
     .bio_pic {
@@ -94,9 +97,11 @@
         object-fit: cover;
     }
 
+
     .author_text {
         flex: 1;
         padding: 20px;
+        color: #36454F;
         h1 {
             margin: 0;
             font-size: 48px;
@@ -191,48 +196,55 @@
     white-space: pre-wrap;
 }
 
-
-.header {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    padding-top: 10px;
-    grid-template-areas: "logo button" "menu menu";
-}
-
-@media only screen and (min-width: 768px) {
-    .header {
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas: "logo menu button";
-    }
-}
-
-.header_logo {
-    font-weight: 800;
-    font-size: 25px;
-}
-
-.header_button {
-    display: flex;
-    justify-content: end;
-}
-
-.header_nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-    font-weight: 600;
-    padding: 0;
-}
-
-.header_nav ul a {
-    padding: 10px;
-    text-decoration: none;
-    color: var(--black);
-}
-
 .footer {
     margin: 4rem;
     text-align: center;
+}
+
+
+.featured {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left:0;
+    padding-right: 0;
+    border-radius: 0;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+
+    background-color: rgba(168,117,177,.8); /* Gainsboro */
+
+
+    img {
+        max-width: 50%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .featured_text {
+        flex: 1;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        h2 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
 }

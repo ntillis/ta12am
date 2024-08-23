@@ -123,16 +123,20 @@ a {
 }
 
 /* Author */
+.author-container {
+  max-width: 90%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the container */
+}
+
 .author {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0;
+  margin: 20px;
   padding: 0;
   border-radius: 0;
   box-sizing: border-box;
-  background-color: #DCDCDC; /* Gainsboro */
 }
 .author .bio_pic {
   max-width: 50%;
@@ -142,6 +146,7 @@ a {
 .author .author_text {
   flex: 1;
   padding: 20px;
+  color: #36454F;
 }
 .author .author_text h1 {
   margin: 0;
@@ -231,48 +236,48 @@ a {
   white-space: pre-wrap;
 }
 
-.header {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  padding-top: 10px;
-  grid-template-areas: "logo button" "menu menu";
-}
-
-@media only screen and (min-width: 768px) {
-  .header {
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas: "logo menu button";
-  }
-}
-.header_logo {
-  font-weight: 800;
-  font-size: 25px;
-}
-
-.header_button {
-  display: flex;
-  justify-content: end;
-}
-
-.header_nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
-  font-weight: 600;
-  padding: 0;
-}
-
-.header_nav ul a {
-  padding: 10px;
-  text-decoration: none;
-  color: var(--black);
-}
-
 .footer {
   margin: 4rem;
   text-align: center;
+}
+
+.featured {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  background-color: rgba(168, 117, 177, 0.8); /* Gainsboro */
+}
+.featured img {
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+.featured .featured_text {
+  flex: 1;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.featured .featured_text h2 {
+  margin: 0;
+  font-size: 48px;
+}
+.featured .featured_text p {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.featured .featured_text a {
+  color: white;
+  text-decoration: none;
 }
 
 .navbar {
@@ -309,4 +314,105 @@ a {
 .navbar__links li a:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
   border-radius: 5px; /* Add rounded corners */
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between; /* This makes the logo and navbar sit at opposite ends */
+  align-items: center;
+  background-color: var(--purple);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: 24px;
+  padding-right: 24px;
+  top: 10%;
+  z-index: 1;
+}
+
+.header-logo {
+  width: 20%; /* Adjust the logo size */
+  max-width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header-links {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Align links horizontally */
+  gap: 20px; /* Space between the links */
+  margin: 0; /* Remove default margin */
+}
+
+.header-links li a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Text color */
+  font-weight: 600; /* Bold text */
+  font-size: var(--font-size-md); /* Adjust font size */
+  padding: 10px 15px; /* Add padding to the links */
+}
+
+.header-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.header-wave .wave-container {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+}
+
+.post_container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.post_container .post_header {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+}
+.post_container .post_title {
+  color: var(--black);
+}
+.post_container .post_date {
+  margin: 16px;
+  color: var(--grey);
+  font-size: var(--font-size-sm);
+}
+.post_container .post_body {
+  font-size: var(--font-size-base);
+}
+
+.comment_container {
+  margin: 10px;
+  padding: 16px;
+}
+.comment_container .comment {
+  margin: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--grey);
+}
+.comment_container .comment .comment_name {
+  font-size: var(--font-size-md);
+}
+.comment_container .comment .comment_date {
+  color: var(--grey);
+}
+.comment_container .comment .comment_content {
+  padding-left: 20px;
+  font-size: var(--font-size-sm);
+}
+.comment_container .no_comments {
+  font-style: italic;
+  color: var(--grey);
 }

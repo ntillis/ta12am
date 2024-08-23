@@ -1,20 +1,31 @@
-<h1><%= data.title %></h1>
-<article class="article">
-    <%= data.body %>
-</article>
+<%- include('partials/header.ejs') %>
 
-<h2>Comments</h2>
-<% if (data.comments.length > 0) { %>
-    <% data.comments.forEach(comment => { %>
-        <div class="comment">
-            <h4><%= comment.name %></h4>
-            <p><%= comment.createdAt.toDateString() %></p>
-            <p><%= comment.message %></p>
-        </div>
-    <% }) %>
-<% } else { %>
-    <p>No comments yet.</p>
-<% } %>
+<div class="post_container">
+    <div class="post_header">
+        <h1 class="post_title"><%= data.title %></h1>
+        <h3 class="post_date"><%= data.createdAt.toDateString() %></h3>
+    </div>
+    <br/>
+    <article class="post_body">
+        <%= data.body %>
+    </article>
+</div>
+
+<div class="comment_container">
+    <% if (data.comments.length > 0) { %>
+        <h2><%= data.comments.length %> Comments</h2>
+        <% data.comments.forEach(comment => { %>
+            <div class="comment">
+                <h3 class="comment_name"><%= comment.name %></h3>
+                <p class="comment_content"><%= comment.message %></p>
+                <p class="comment_date"><%= comment.createdAt.toLocaleString() %></p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h2>Comments</h2>
+        <p class="no_comments">No comments yet. Be the first!</p>
+    <% } %>
+</div>
 
 
 <div class="container mt-5">

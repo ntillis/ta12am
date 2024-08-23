@@ -8,7 +8,8 @@
     <input type="text" placeholder="Post Title" name="title">
 
     <label for="body"><b>Content</b></label>
-    <textarea name="body" cols="50" rows="10"></textarea>
+    <div id="editor"></div>
+    <input type="hidden" name="body" id="body">
 
     <label><b>Tags</b></label><br>
     <% tags.forEach(tag => { %>
@@ -19,8 +20,5 @@
     <input type="submit" value="Add" class="btn">
 </form>
 
-<form action="/tags" method="POST">
-    <label for="tagName">Tag Name:</label>
-    <input type="text" id="tagName" name="name" required>
-    <button type="submit" class="btn">Create Tag</button>
-</form>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+<script src="/js/script.js"></script>

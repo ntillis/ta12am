@@ -5,9 +5,25 @@ const User = require('../models/User');
 const Tag = require('../models/Tag');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+
 
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
+
+router.use(bodyParser.urlencoded({ extended: true }));
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+const upload = multer({ storage });
 
 
 const authMiddleware = (req, res, next) => {
@@ -81,6 +97,14 @@ router.get('/dashboard', authMiddleware, async (req, res) => {
     }
 });
 
+router.post('/upload-image', upload.single('file'), (req, res) => {
+    if (req.file) {
+        const imageUrl = `/uploads/${req.file.filename}`
+        res.json({ location: imageUrl });  // Correct response format
+      } else {
+        res.status(400).json({ error: 'Image upload failed' });
+      }
+});
 
 router.get('/add-post', authMiddleware, async (req, res) => {
     try {

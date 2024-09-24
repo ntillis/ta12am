@@ -5,6 +5,7 @@ const expressLayout = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -17,14 +18,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static('public'));
+
 app.use(cookieParser());
 
 app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
+app.use(methodOverride('_method'));
+
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
+
 
 
 app.use(session({

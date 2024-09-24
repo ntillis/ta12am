@@ -280,6 +280,44 @@ a {
   text-decoration: none;
 }
 
+.post_body {
+  display: block;
+}
+
+.post_body img {
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.admin {
+  padding: 20px;
+}
+
+.admin_title h2 {
+  font-size: var(--font-size-lg);
+}
+.admin_post {
+  list-style-type: none;
+}
+.admin_post li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  border-bottom: 1px solid var(--grey);
+}
+.admin_post li a {
+  font-size: var(--font-size-md);
+  text-decoration: none;
+  flex-grow: 1;
+}
+.admin_post li .btn {
+  margin-left: 10px;
+  width: 80px;
+  height: 35px;
+  display: inline-block;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between; /* Space between logo and links */

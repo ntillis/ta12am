@@ -248,3 +248,50 @@
         }
     }
 }
+
+.post_body {
+    display: block;
+}
+.post_body img{
+    max-width: 100%; /* Make images responsive */
+    height: auto;    /* Maintain aspect ratio */
+}
+
+.admin {
+    padding: 20px;
+}
+
+.admin_title {
+    h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn {
+
+    }
+}
+
+.admin_post{
+    list-style-type: none;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        border-bottom: 1px solid var(--grey);
+
+        a {
+            font-size: var(--font-size-md);
+            text-decoration: none;
+            flex-grow: 1;
+        }
+
+        .btn {
+            margin-left: 10px;
+            width: 80px;
+            height: 35px;
+            display:inline-block;
+        }
+    }
+}

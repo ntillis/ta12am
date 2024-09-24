@@ -1,3 +1,7 @@
+<%- include('../partials/header_admin.ejs') %>
+
+<div class="admin">
+
 <div class="admin_title">
     <h2>Posts</h2>
     <a href="/add-post" class="btn">+ Add New</a>
@@ -10,7 +14,7 @@
 
             <a href="/post/<%= post._id %>">
             
-                <%= post.title %> &nearr;
+                <%= post.title %>
 
             </a>
 
@@ -26,3 +30,4 @@
 
     <% }) %>
 </ul>
+</div>

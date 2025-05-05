@@ -23,6 +23,8 @@ model User {
 model Post {
   id String  @id @default(auto()) @map("_id") @db.ObjectId
   title String
+  author String
+  slug String @unique
   content String
   tags String[]
   comments Comment[]

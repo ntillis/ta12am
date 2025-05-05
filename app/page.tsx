@@ -1,18 +1,11 @@
-import { Navbar } from "@/components/Navbar";
-import prisma from "@/lib/prisma";
+import Link from "next/link";
 
 export default async function Home() {
-  const users = await prisma.user.findMany();
   return (
       <main className="flex flex-col p-24">
-        <Navbar />
-        <div className="flex flex-col items-center justify-center m-4">
-          <ol>
-            {users.map((user) => (
-              <li key={user.id} className="m-4">{user.email}</li>
-            ))}
-          </ol>
-        </div>
+        <h1 className="text-3xl font-bold">Welcome to the app!</h1>
+        <Link href="/users" className="text-blue-500 hover:underline">Users</Link>
+        <Link href="/posts" className="text-blue-500 hover:underline">Posts</Link>
       </main>
   );
 }

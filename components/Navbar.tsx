@@ -22,6 +22,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Link from "next/link";
 
 interface MenuItem {
   title: string;
@@ -53,16 +54,16 @@ interface NavbarProps {
 
 const Navbar = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "logo.png",
+    url: "/",
+    src: "/logo.png",
     alt: "logo",
     title: "Thinking at 12am",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
       title: "Resources",
-      url: "#",
+      url: "/",
       items: [
         {
           title: "Help Center",
@@ -91,8 +92,8 @@ const Navbar = ({
       ],
     },
     {
-      title: "Blog",
-      url: "#",
+      title: "Latest Posts",
+      url: "/posts",
     },
   ],
   auth = {
@@ -224,15 +225,13 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <a key={item.title} href={item.url} className="text-md font-semibold">
-      {item.title}
-    </a>
+    <Link href={item.url} className="text-md font-semibold">{item.title}</Link>
   );
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
-    <a
+    <Link
       className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
       href={item.url}
     >
@@ -245,7 +244,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
           </p>
         )}
       </div>
-    </a>
+    </Link>
   );
 };
 

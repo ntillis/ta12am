@@ -1,14 +1,11 @@
 import { PrismaClient } from '../generated/prisma'
 
-const prisma = new PrismaClient()
-
-async function main() {
-
+const globalForPrisma = global as unknown as { 
+    prisma: PrismaClient
 }
 
-main().catch((e) => {
-  console.error(e)
-  process.exit(1)
-}).finally(async () => {
-  await prisma.$disconnect()
-})
+const prisma = globalForPrisma.prisma || new PrismaClient()
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+
+export default prisma

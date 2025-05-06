@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
                 slug,
                 tags: {
                     set: tags || [],
-                }
+                }            
             }
         })
         return NextResponse.json(newPost, {status: 201})

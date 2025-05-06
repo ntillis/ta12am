@@ -28,7 +28,7 @@ model Post {
   content String
   tags String[]
   comments Comment[]
-  createtdAt DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 

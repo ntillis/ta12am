@@ -7,6 +7,8 @@ type Props = {
     }
 }
 
+export const revalidate = 300;
+
 export default async function page({ params }: Props) {
     const param = await params
     const post = await prisma.post.findUnique({

@@ -1,9 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { getPosts } from '@/lib/posts';
 import BlogCard from './BlogCard';
 
-export default function BlogGrid({ posts }: { posts: any[] }) {
+
+export default async function BlogGrid() {
+  const posts = await getPosts();
     return (
-      <div>
+      <div className='flex flex-col'>
         {posts.map((post) => (
           <BlogCard key={post.id} post={post} />
         ))}

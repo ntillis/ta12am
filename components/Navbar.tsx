@@ -117,7 +117,7 @@ const Navbar = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <SearchBar />
           </div>
         </nav>
@@ -149,7 +149,7 @@ const Navbar = ({
                     collapsible
                     className="flex w-full flex-col gap-4"
                   >
-                    {menu.map((item) => renderMobileMenuItem(item))}
+                    {menu.map((item) => renderMobileMenuItem(item, item.title))}
                   </Accordion>
                 </div>
               </SheetContent>
@@ -191,10 +191,10 @@ const renderMenuItem = (item: MenuItem) => {
   );
 };
 
-const renderMobileMenuItem = (item: MenuItem) => {
+const renderMobileMenuItem = (item: MenuItem, key: string) => {
   if (item.items) {
     return (
-      <AccordionItem key={item.title} value={item.title} className="border-b-0">
+      <AccordionItem key={key} value={item.title} className="border-b-0">
         <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline">
           {item.title}
         </AccordionTrigger>
@@ -208,7 +208,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <Link href={item.url} className="text-md font-semibold">
+    <Link key={key} href={item.url} className="text-md font-semibold">
       {item.title}
     </Link>
   );

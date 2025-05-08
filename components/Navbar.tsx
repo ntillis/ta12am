@@ -1,4 +1,4 @@
-import { Book, Menu, Sunset, Trees, CircleHelp } from "lucide-react";
+import { Mail, Menu, Camera, Globe, Trees, Zap } from "lucide-react";
 
 import {
   Accordion,
@@ -64,38 +64,44 @@ const Navbar = ({
   menu = [
     { title: "Home", url: "/" },
     {
-      title: "Resources",
+      title: "Posts",
       url: "/",
       items: [
         {
-          title: "About",
-          description: "Get all the answers you need right here",
-          icon: <CircleHelp className="size-5 shrink-0" />,
-          url: "#",
+          title: "Latest",
+          description: "Read my latest posts",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "/posts",
         },
         {
-          title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
+          title: "All Posts",
+          description: "Browse through an archive of all of my posts",
+          icon: <Globe className="size-5 shrink-0" />,
+          url: "/posts",
         },
         {
-          title: "Status",
-          description: "Check the current status of our services and APIs",
+          title: "Tags",
+          description: "Look through my posts sorted by tag",
           icon: <Trees className="size-5 shrink-0" />,
           url: "#",
         },
         {
-          title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
+          title: "Photos",
+          description: "A colllection of recent photos",
+          icon: <Camera className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Connect",
+          description: "Share your thoughts or subscribe to our newsletter!",
+          icon: <Mail className="size-5 shrink-0" />,
           url: "#",
         },
       ],
     },
     {
-      title: "Latest Posts",
-      url: "/posts",
+      title: "About",
+      url: "/about",
     },
   ],
 }: NavbarProps) => {

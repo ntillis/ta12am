@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import BlogGrid from "@/components/BlogGrid";
-import SearchBar from "@/components/ui/SearchBar";
-
 
 export default async function Home() {
   return (

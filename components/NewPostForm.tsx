@@ -49,29 +49,32 @@ export default function NewPostForm() {
   }
 
   return (
+    <div>
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center justify-center w-full max-w-md p-4 mx-auto bg-white rounded-lg shadow-md"
+      className="flex flex-col items-center justify-center w-full p-4 mx-auto"
     >
-      <div>
-        <Label htmlFor="title">Title</Label>
+      <div className="w-3/5 m-5">
+        <Label htmlFor="title" className="py-5 text-xl font-bold">Title</Label>
         <Input
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          placeholder="Post title"
+          placeholder="Greatest Post Ever"
+          className="h-15"
         />
       </div>
 
-      <div>
-        <Label htmlFor="content">Content</Label>
+      <div className="w-3/5">
+        <Label htmlFor="content" className="py-5 text-xl font-bold">Content</Label>
         <RichTextEditor content={content} setContent={setContent} />
       </div>
 
-      <Button type="submit" disabled={loading} className="mt-4">
+      <Button type="submit" disabled={loading} className="my-10">
         Create Post
       </Button>
     </form>
+    </div>
   );
 }

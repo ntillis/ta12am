@@ -41,7 +41,7 @@ export default function RichTextEditor({ content, setContent }: RTEProps) {
   }, [editor, content]);
 
   return (
-    <div className="w-4/5 mx-auto border my-10 shadow-sm">
+    <div className="w-full mx-auto border shadow-sm">
       <MenuBar editor={editor} />
       <EditorContent editor={editor} className="prose" />
     </div>

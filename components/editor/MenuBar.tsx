@@ -12,15 +12,9 @@ import {
   Strikethrough,
 } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
-import TextAlign from '@tiptap/extension-text-align'
 import { Editor } from "@tiptap/react";
 
 export default function MenuBar({ editor }: { editor: Editor | null }) {
-
-    TextAlign.configure({
-      types: ['heading', 'paragraph'],
-    })
-
 
   if (!editor) {
     return null;

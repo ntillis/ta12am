@@ -1,10 +1,11 @@
-import CreatePostForm from '@/components/CreatePostForm'
+import NewPostForm from '@/components/NewPostForm'
 import React from 'react'
+
 
 
 const page = () => {
   return (
-    <CreatePostForm />
+    <NewPostForm />
   )
 }
 

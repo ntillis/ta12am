@@ -16,7 +16,7 @@ const CustomTabIndent = Extension.create({
               commands.toggleList('bulletList', 'listItem')
             } else {
               // If not in a list, insert 4 non-breaking spaces
-              this.editor.commands.insertContent('\u00A0\u00A0\u00A0\u00A0')  // 4 non-breaking spaces
+              this.editor.commands.insertContent('\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0')  // 4 non-breaking spaces
             }
     
             return true  // prevent default tab behavior

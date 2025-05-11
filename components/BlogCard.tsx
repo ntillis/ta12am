@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface Post {
-  createdAt: any;
+  createdAt: Date;
   slug: string;
   title: string;
   content: string;

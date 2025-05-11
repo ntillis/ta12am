@@ -2,7 +2,7 @@ import Delete from "./posts/Delete";
 import Edit from "./posts/Edit"
 
 interface Post {
-  createdAt: any;
+  createdAt: Date;
   slug: string;
   title: string;
   content: string;

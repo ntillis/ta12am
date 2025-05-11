@@ -18,7 +18,7 @@ export default async function Home() {
           height={500}
           className="mx-auto"
         />
-        <h1 className="font-bold text-2xl p-5">Hi, I'm Melissa</h1>
+        <h1 className="font-bold text-2xl p-5">Hi, I&apos;m Melissa</h1>
         <p className="text-lg">Dog mom, regular mom, and now blogger. I started this blog as a place to share my thoughts, I hope you enjoy!<br />Learn More</p>
       </div>
 

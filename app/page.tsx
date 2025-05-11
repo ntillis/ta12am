@@ -1,9 +1,15 @@
+export const metadata = {
+  title: 'Thinking at 12am',
+  description: 'A random blog where I share my thoughts, my feelings, and stories',
+}
+
 import Link from "next/link";
 import Image from "next/image";
 import BlogGrid from "@/components/BlogGrid";
 
 export default async function Home() {
   return (
+    <>
     <main className="flex flex-col p-10 items-center">
       <div>
         <h1 className="font-bold text-3xl">Thinking at 12AM</h1>
@@ -56,5 +62,6 @@ export default async function Home() {
         <BlogGrid />
       </div>
     </main>
+    </>
   );
 }

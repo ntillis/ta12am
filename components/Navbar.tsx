@@ -44,6 +44,12 @@ interface NavbarProps {
     alt: string;
     title: string;
   };
+  mobileLogo?: {
+    url: string;
+    src: string;
+    alt: string;
+    title: string;
+  };
   menu?: MenuItem[];
   auth?: {
     login: {
@@ -63,6 +69,12 @@ const Navbar = async ({
     src: "/paw-print1.svg",
     alt: "logo",
     title: "Thinking at 12am",
+  },
+  mobileLogo ={
+    url:'/',
+    src:'/Wordmark.svg',
+    alt: 'logo',
+    title: 'Moble Logo'
   },
   menu = [
     { title: "Home", url: "/" },
@@ -158,8 +170,8 @@ const Navbar = async ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
+            <a href={mobileLogo.url} className="flex items-center gap-2">
+              <img src={mobileLogo.src} className="max-h-10" alt={mobileLogo.alt} />
             </a>
             <Sheet>
               <SheetTrigger asChild>

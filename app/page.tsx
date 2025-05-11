@@ -10,34 +10,50 @@ export default async function Home() {
         <p className="p-7 text-lg ">A Random Thought Blog</p>
       </div>
 
-      <div className="text-center w-3/5">
+      <div className="w-full max-w-2xl text-center p-5 border-b shadow-md mb-15">
         <Image
           src="/waterfall.jpeg"
           alt="Pic of me with waterfall"
           width={500}
           height={500}
-          className="mx-auto"
+          className="mx-auto w-full h-auto"
         />
-        <h1 className="font-bold text-2xl p-5">Hi, I&apos;m Melissa</h1>
-        <p className="text-lg">Dog mom, regular mom, and now blogger. I started this blog as a place to share my thoughts, I hope you enjoy!<br />Learn More</p>
+        <div className="w-full p-5">
+          <h1 className="font-bold text-2xl p-5">Hi, I&apos;m Melissa</h1>
+          <p className="text-lg">
+            Dog mom, regular mom, and now blogger. I started this blog as a
+            place to share my thoughts, I hope you enjoy!{" "}
+          </p>
+          <Link href="/about">
+            <p className="hover:underline pt-6 text-lg">Learn More {">"}</p>
+          </Link>
+        </div>
       </div>
 
-      <div className="text-center m-8 w-3/5">
-          <Image
-            src="/kidney.jpeg"
-            alt="post kidney surgery"
-            width={500}
-            height={500}
-            className="mx-auto"
-          />
-          <h2 className="font-bold text-xl p-5">The One Kidney Club</h2>
-          <p className="text-lg">In March 2024 I donated a kidney! Learn more about my story here!</p>
-          <Link href="/posts">Learn More {">"}</Link>
+      <div className="text-center m-8 w-full max-w-2xl bg-darker text-white border shadow-md">
+        <Image
+          src="/kidney.jpeg"
+          alt="post kidney surgery"
+          width={500}
+          height={500}
+          className="mx-auto w-full h-auto"
+        />
+        <div className="pt-5 pb-10">
+          <h2 className="text-left px-7 font-semibold text-xl underline">Featured Post</h2>
+
+          <h2 className="font-extrabold text-xl p-5">The One Kidney Club</h2>
+          <p className="text-lg font-semibold px-5">
+            In March 2024 I donated a kidney! Learn more about my story here!
+          </p>
+          <Link href="/posts">
+            <div className="p-5 text-lg font-semibold hover:underline">Learn More {">"}</div>
+          </Link>
+        </div>
       </div>
 
-      <div className="text-center m-8 w-3/5">
-          <h2 className="font-bold text-xl p-5">Recent Posts</h2>
-          <BlogGrid />
+      <div className="text-center m-8 w-full max-w-2xl">
+        <h2 className="font-bold text-xl p-5">Recent Posts</h2>
+        <BlogGrid />
       </div>
     </main>
   );

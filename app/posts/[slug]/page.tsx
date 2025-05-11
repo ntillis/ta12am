@@ -13,8 +13,6 @@ export const revalidate = 300;
 export default async function page(props: Props) {
     const params = await props.params;
 
-    const { slug } = await params;
-
     const post = await prisma.post.findUnique({
         where: { slug: params.slug}
     })

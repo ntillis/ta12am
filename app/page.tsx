@@ -51,7 +51,7 @@ export default async function Home() {
           <p className="text-lg font-semibold px-5">
             In March 2024 I donated a kidney! Learn more about my story here!
           </p>
-          <Link href="/posts">
+          <Link href="/posts/my-kidney-donation-journey">
             <div className="p-5 text-lg font-semibold hover:underline">Learn More {">"}</div>
           </Link>
         </div>

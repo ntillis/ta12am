@@ -147,7 +147,7 @@ const Navbar = async ({
     <section className="p-8 m-0 w-full bg-darker text-accent">
       <div className="container">
         {/* Desktop Menu */}
-        <nav className="hidden justify-between lg:flex">
+        <nav className="hidden justify-between lg:flex relative z-30">
           <div className="flex items-center gap-10">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">

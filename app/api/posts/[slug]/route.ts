@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
-export async function DELETE(req: NextRequest, { params }: { params: { slug: string } }) {
+export async function DELETE(req: NextRequest) {
 
-  const slug = params.slug
+  const params = req.nextUrl.searchParams;
+  const slug = params.get('slug') ?? undefined;
 
   try {
     await prisma.post.delete({

@@ -22,12 +22,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Wave from "@/components/ui/Wave";
 import Link from "next/link";
 import Image from "next/image";
 import SearchBar from "./ui/SearchBar";
-import { cookies } from 'next/headers';
+import { cookies } from "next/headers";
 import { jwtVerify } from "jose";
-
 
 interface MenuItem {
   title: string;
@@ -70,11 +70,11 @@ const Navbar = async ({
     alt: "logo",
     title: "Thinking at 12am",
   },
-  mobileLogo ={
-    url:'/',
-    src:'/Wordmark.svg',
-    alt: 'logo',
-    title: 'Moble Logo'
+  mobileLogo = {
+    url: "/",
+    src: "/Wordmark.svg",
+    alt: "logo",
+    title: "Moble Logo",
   },
   menu = [
     { title: "Home", url: "/" },
@@ -121,7 +121,7 @@ const Navbar = async ({
   ],
 }: NavbarProps) => {
   const cookieStore = await cookies();
-  const token = (await cookieStore).get('token')?.value
+  const token = (await cookieStore).get("token")?.value;
 
   let isAdmin = false;
   if (token) {
@@ -132,76 +132,89 @@ const Navbar = async ({
       );
       isAdmin = payload.email === process.env.ADMIN_EMAIL;
     } catch (err) {
-      console.error("JWT verification failed", err)
+      console.error("JWT verification failed", err);
     }
   }
 
   const updatedMenu = [
     ...menu,
-    ...(isAdmin
-      ? [{ title: "Admin Dashboard", url: "/admin/dashboard" }]
-      : []),
+    ...(isAdmin ? [{ title: "Admin Dashboard", url: "/admin/dashboard" }] : []),
   ];
 
   return (
-    <section className="p-8 m-0 w-full bg-darker text-accent">
-      <div className="container">
-        {/* Desktop Menu */}
-        <nav className="hidden justify-between lg:flex relative z-30">
-          <div className="flex items-center gap-10">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} alt="logo" height={80} width={80} />
-            </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList className="flex gap-5">
-                  {updatedMenu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
+    <div className="relative w-full">
+      <section className="p-8 m-0 w-full bg-darker text-accent relative z-30">
+        <div className="container">
+          {/* Desktop Menu */}
+          <nav className="hidden justify-between lg:flex relative z-30">
+            <div className="flex items-center gap-10">
+              {/* Logo */}
+              <a href={logo.url} className="flex items-center gap-2">
+                <Image src={logo.src} alt="logo" height={80} width={80} />
+              </a>
+              <div className="flex items-center">
+                <NavigationMenu>
+                  <NavigationMenuList className="flex gap-5">
+                    {updatedMenu.map((item) => renderMenuItem(item))}
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </div>
+            </div>
+            <div className="flex gap-2 items-center">
+              <SearchBar />
+            </div>
+          </nav>
+
+          {/* Mobile Menu */}
+          <div className="block lg:hidden">
+            <div className="flex items-center justify-between">
+              {/* Logo */}
+              <a href={mobileLogo.url} className="flex items-center gap-2">
+                <img
+                  src={mobileLogo.src}
+                  className="max-h-10"
+                  alt={mobileLogo.alt}
+                />
+              </a>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon" className="text-black">
+                    <Menu className="size-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="overflow-y-auto">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <a href={logo.url} className="flex items-center gap-2">
+                        <img
+                          src={logo.src}
+                          className="max-h-8"
+                          alt={logo.alt}
+                        />
+                      </a>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-6 p-4">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="flex w-full flex-col gap-4"
+                    >
+                      {updatedMenu.map((item) =>
+                        renderMobileMenuItem(item, item.title)
+                      )}
+                    </Accordion>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
-          <div className="flex gap-2 items-center">
-            <SearchBar />
-          </div>
-        </nav>
-
-        {/* Mobile Menu */}
-        <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <a href={mobileLogo.url} className="flex items-center gap-2">
-              <img src={mobileLogo.src} className="max-h-10" alt={mobileLogo.alt} />
-            </a>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="text-black">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="max-h-8" alt={logo.alt} />
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-6 p-4">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="flex w-full flex-col gap-4"
-                  >
-                    {updatedMenu.map((item) => renderMobileMenuItem(item, item.title))}
-                  </Accordion>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
         </div>
+      </section>
+      <div className="w-full h-auto">
+        <Wave />
       </div>
-    </section>
+    </div>
   );
 };
 

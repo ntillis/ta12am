@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
-export async function DELETE(req: NextRequest) {
+export async function DELETE(req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
 
-  const params = req.nextUrl.searchParams;
-  const slug = params.get('slug') ?? undefined;
+  // Check if the slug is null or undefined and handle the error case
+  if (!params.slug) {
+    return NextResponse.json({ error: "Slug is required" }, { status: 400 });
+  }
+
+  const slug = params.slug
 
   try {
     await prisma.post.delete({

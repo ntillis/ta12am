@@ -16,7 +16,6 @@ function Delete({ post }: { post: { slug: string }}) {
             if (res.ok) {
                 router.refresh();
                 toast("Post Successfully Deleted!")
-                console.log("All clear")
             } else {
                 alert("Deletion failed")
             }

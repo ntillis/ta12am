@@ -108,7 +108,7 @@ const Navbar = async ({
     },
   ],
 }: NavbarProps) => {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const token = (await cookieStore).get('token')?.value
 
   let isAdmin = false;

@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-darker">
       <div className="max-w-screen-xl px-4 py-10 mx-auto overflow-hidden sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-6">
-          <a href="#" className="text-accent hover:text-gray-500">
+          <a href="https://www.facebook.com/melissa.tillis" className="text-accent hover:text-gray-500" target="_blank">
             <span className="sr-only">Facebook</span>
             <svg
               className="w-6 h-6"
@@ -19,7 +19,7 @@ const Footer = () => {
               ></path>
             </svg>
           </a>
-          <a href="#" className="text-accent hover:text-gray-500">
+          <a href="https://www.instagram.com/melissa_tillis?igsh=MWFsandlbjlqcmxlOQ==" className="text-accent hover:text-gray-500" target="_blank">
             <span className="sr-only">Instagram</span>
             <svg
               className="w-6 h-6"

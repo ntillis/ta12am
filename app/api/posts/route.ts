@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
             data: {
                 title,
                 content,
-                author: "Noah Tillis",
+                author: "Melissa Tillis",
                 slug,
                 tags: {
                     set: tags || [],

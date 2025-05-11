@@ -25,6 +25,9 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import SearchBar from "./ui/SearchBar";
+import { cookies } from 'next/headers';
+import { jwtVerify } from "jose";
+
 
 interface MenuItem {
   title: string;
@@ -54,7 +57,7 @@ interface NavbarProps {
   };
 }
 
-const Navbar = ({
+const Navbar = async ({
   logo = {
     url: "/",
     src: "/paw-print1.svg",
@@ -105,6 +108,29 @@ const Navbar = ({
     },
   ],
 }: NavbarProps) => {
+  const cookieStore = cookies();
+  const token = (await cookieStore).get('token')?.value
+
+  let isAdmin = false;
+  if (token) {
+    try {
+      const { payload } = await jwtVerify(
+        token,
+        new TextEncoder().encode(process.env.JWT_SECRET!)
+      );
+      isAdmin = payload.email === process.env.ADMIN_EMAIL;
+    } catch (err) {
+      console.error("JWT verification failed", err)
+    }
+  }
+
+  const updatedMenu = [
+    ...menu,
+    ...(isAdmin
+      ? [{ title: "Admin Dashboard", url: "/admin/dashboard" }]
+      : []),
+  ];
+
   return (
     <section className="p-8 m-0 w-full bg-darker text-accent">
       <div className="container">
@@ -118,7 +144,7 @@ const Navbar = ({
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList className="flex gap-5">
-                  {menu.map((item) => renderMenuItem(item))}
+                  {updatedMenu.map((item) => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -155,7 +181,7 @@ const Navbar = ({
                     collapsible
                     className="flex w-full flex-col gap-4"
                   >
-                    {menu.map((item) => renderMobileMenuItem(item, item.title))}
+                    {updatedMenu.map((item) => renderMobileMenuItem(item, item.title))}
                   </Accordion>
                 </div>
               </SheetContent>

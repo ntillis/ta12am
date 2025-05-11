@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -15,11 +16,10 @@ export default function LoginPage() {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
-
-    console.log("checking username")
-
+    
     if (res.ok) {
-      router.push('/');
+      router.push('/admin/dashboard');
+      toast("Welcome back, Melissa");
     } else {
       alert('Invalid login');
     }

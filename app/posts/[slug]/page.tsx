@@ -27,8 +27,8 @@ export default async function page(props: Props) {
   }
 
   return (
-    <>
-      <PostViewer post={post} />
-    </>
+    <div className="relative flex flex-col m-6 p-10 w-full max-w-4xl mx-auto z-10">
+      <PostViewer post={post} />      
+    </div>
   );
 }

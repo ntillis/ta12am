@@ -102,7 +102,7 @@ const Navbar = async ({
         },
         {
           title: "Photos",
-          description: "A colllection of recent photos",
+          description: "A collection of recent photos",
           icon: <Camera className="size-5 shrink-0" />,
           url: "#",
         },

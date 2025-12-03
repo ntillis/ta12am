@@ -20,7 +20,7 @@ export default function PostViewer({ post }: PostViewerProps) {
         async={true}
         strategy="afterInteractive"
       />
-      <div className="relative flex flex-col m-6 p-10 w-full max-w-4xl mx-auto z-10">
+      <div className="w-full mb-10">
         <header className="w-full flex flex-col border-b">
           <h1 className="text-3xl font-bold mb-4 w-full px-5 text-left">
             {post.title}
